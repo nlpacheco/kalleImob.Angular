@@ -1,0 +1,8 @@
+﻿
+<div class="d-flex flex-wrap ">
+  <mat-card class="m-3 example-card" *ngFor="let item of imageURLs">
+    <img mat-card-image [src]="item.content" [alt]="item.content">
+    <mat-card-content class="text-center">{{item.name}}</mat-card-content>
+  </mat-card>
+</div>
+

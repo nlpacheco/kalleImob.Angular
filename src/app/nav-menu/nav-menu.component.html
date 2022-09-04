@@ -1,0 +1,120 @@
+<div class="wrapper">
+
+  <nav id="sidebar" >
+
+      <ul class="nav flex-column">
+
+        <li class="nav-item" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+          <a [routerLink]='["/"]'>
+            <i class='fa fa-home'></i> Home
+          </a>
+        </li>
+
+        <li myExpandMenu>
+          <a>
+            <i class="fa fa-university"  style="color: #20c997;"></i>{{"PROPERTIES" | translate}}
+          </a>
+        </li>
+        <ul class=" nav submenu " >
+
+          <li class="nav-item" [routerLinkActive]='["link-active"]'>
+            <a [routerLink]='["/companies"]'>
+              <i class="fa fa-university" style="color: #20c997;"></i> {{"CONTRACT" | translate}}
+            </a>
+          </li>
+
+          <li class="nav-item" [routerLinkActive]='["link-active"]'>
+            <a [routerLink]='["/companies/companyusers"]'>
+              <i class="fa fa-user-circle-o" style="color: #20c997;"></i> {{"PEOPLE" | translate}}
+            </a>
+          </li>
+        </ul>
+
+        <li myExpandMenu>
+            <a>
+              <i class="fa fa-users" style="color: #20c997;"></i> {{"PEOPLE" | translate}}
+            </a>
+          </li>
+            <ul class=" nav submenu " >
+              <li class="nav-item" [routerLinkActive]='["link-active"]'>
+                <a [routerLink]='["/applicationUsers"]'>
+                  <i class="fa fa-users" style="color: #06a3a8;"></i>{{"LESSOR" | translate}}
+                </a>
+              </li>
+              <li class="nav-item" [routerLinkActive]='["link-active"]'>
+                  <a [routerLink]='["/applicationUsers/userProducts"]'>
+                    <i class="fa fa-stack-overflow" style="color: #06a3a8;"></i> {{"LESSEE" | translate}}
+                  </a>
+                </li>
+                <li class="nav-item" [routerLinkActive]='["link-active"]'>
+                    <a [routerLink]='["/applicationUsers/userPointsPerDay"]'>
+                      <i class="fa fa-money" style="color: #06a3a8;"></i> User  Points
+                    </a>
+                </li>
+                <li class="nav-item" [routerLinkActive]='["link-active"]'>
+                  <a [routerLink]='["/applicationUsers/userVouchers"]'>
+                    <i class="fa fa-newspaper-o" style="color: #06a3a8;"></i> User  Vouchers
+                  </a>
+                </li>
+            </ul>
+  
+  
+
+        <li myExpandMenu>
+          <a>
+            <i class="fa fa-bar-chart " style="color: #20c997;"></i> Machines
+          </a>
+        </li>
+
+        <ul class=" nav submenu " >
+          <li class="nav-item" [routerLinkActive]='["link-active"]'>
+            <a [routerLink]='["/machines"]'>
+              <i class="fa fa-cogs" style="color: #20c997;"></i> Machines
+            </a>
+          </li>
+
+          <li class="nav-item" [routerLinkActive]='["link-active"]'>
+            <a [routerLink]='["/machines/machineStatus"]'>
+              <i class="fa fa-thermometer-three-quarters" style="color: #20c997;"></i> Machine Status
+            </a>
+          </li>
+
+          <li class="nav-item" [routerLinkActive]='["link-active"]'>
+            <a [routerLink]='["/machines/machineParameters"]'>
+              <i class="fa fa-tachometer" style="color: #20c997;"></i>  Parameters
+            </a>
+          </li>
+
+
+          <li class="nav-item" [routerLinkActive]='["link-active"]'>
+            <a [routerLink]='["/machines/machineProductTypes"]'>
+              <i class="fa fa-window-restore" style="color: #20c997;"></i> Product Types
+            </a>
+          </li>
+
+        </ul>
+
+
+        <li myExpandMenu>
+          <a>
+            <i class="fa fa-cogs" style="color: #20c997;"></i> Maintenance
+          </a>
+        </li>
+        <ul class=" nav submenu " >
+          <li class="nav-item" [routerLinkActive]='["link-active"]'>
+            <a [routerLink]='["/maintenanceGroups"]'>
+              <i class="fa fa-cog " style="color: #06a3a8;"></i>  Groups
+            </a>
+          </li>
+
+          <li class="nav-item" [routerLinkActive]='["link-active"]'>
+            <a [routerLink]='["/maintenanceGroups/maintenanceUsers"]'>
+              <i class="fa fa-users " style="color: #06a3a8;"></i>  Users
+            </a>
+          </li>
+        </ul>
+      </ul>
+    <!-- </div> -->
+  </nav>
+
+</div>

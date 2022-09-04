@@ -1,0 +1,49 @@
+﻿
+    <div class="modal-header">
+        <h4 class="modal-title pull-center">Error</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body " style="font-size: 80%">
+
+        <div *ngIf="data?.error">
+          <h4>ERROR {{ data?.error}}</h4>
+          <h6 *ngIf="data?.error === 404">Not found :(</h6>
+          <a mat-raised-button [routerLink]="'/'">
+            <h6>Go Home</h6>
+          </a>
+        </div>
+
+        <div *ngIf="data.message">
+          <h4 *ngIf="data?.status"> ERROR {{ data?.status }}</h4><br />
+          <h6 *ngIf="data?.message">{{ data?.message }}</h6><br />
+          <h4 *ngIf="data?.url && data?.url !== '/'">
+              Error in {{ data?.url | uppercase }} page <br />Sorry {{data?.user }} :(
+          </h4>
+          <h6 *ngIf="data?.errorId">This error has been reported to the Administrator with the ID:<br>
+             {{ data?.errorId}}</h6>
+          <a mat-raised-button
+              [routerLink]="data?.url"
+              *ngIf="data?.url && data.status !== '404'">
+              <h6>Go Back to {{data?.url}}</h6>
+          </a>
+          <a mat-raised-button
+            routerLink="/"
+            *ngIf="!data.url || data.status === '404'">
+            <h6>Go Back to home</h6>
+          </a>
+        </div>
+
+        <!--
+        <div *ngIf="!data">
+          <h1>Unknown error, sorry :(</h1>
+          <a mat-raised-button [routerLink]="'/login'">
+            <h6>Go Home</h6>
+          </a>
+        </div> -->
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{closeBtnName}}</button>
+      </div>

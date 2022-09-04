@@ -1,0 +1,31 @@
+@import '~@angular/material/theming';
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  padding-top: 30px;
+}
+
+
+.main-container {
+  width: 100%;
+  min-height: calc(100vh - 60px);
+}
+
+.app-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+
+.app-is-mobile .app-sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+
+// .toolbarMenu {
+//   background-color: mat-color($primary, A200);
+// }

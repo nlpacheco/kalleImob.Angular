@@ -1,0 +1,52 @@
+  <form #loginForm="ngForm" class="form-signin" (ngSubmit)="login()">
+
+    <div class="text-center">
+        <mat-card> 
+            <mat-card-title>{{"WELCOME KALLEIMOB" | translate}}</mat-card-title>
+            <mat-card-subtitle>&copy; Kalle Sofware ForInnovation</mat-card-subtitle>
+
+            <mat-card-content>
+
+            <!-- <img class="mb-4" src="{{logoURL}}" alt="Machine" height="100"> -->
+              <h3 class="h3 mb-3 font-weight-normal">{{"PLEASE LOGIN" | translate }}</h3>
+
+              <mat-form-field  class="mr-sm-2">
+                <input matInput  type="text" name="username" placeholder="Username" required [(ngModel)]="model.userIdentification">
+              </mat-form-field>
+        
+              <mat-form-field  class=" mr-sm-2">
+                <input matInput  class="form-control mr-sm-2" type="password" name="password" placeholder="Password" required [(ngModel)]="model.password">
+              </mat-form-field>
+
+              <mat-slide-toggle name="rememberMe" [(ngModel)]="rememberMe">{{"REMEMBER ME" | translate}}</mat-slide-toggle>
+              <br>
+              <mat-hint>{{"REMEMBER ADVISE" | translate}}</mat-hint>
+
+            </mat-card-content>
+        </mat-card>
+
+    </div>
+
+    <div *ngIf="isDevelopment" class="mt-2 mb-1">
+        <mat-card> 
+            <mat-card-content>
+                <label class="my-2" id="example-radio-group-label">Environment:</label>
+                <mat-radio-group aria-label="Environment" name="environmentOptions"  [(ngModel)]="chosenEnvironment">
+                  <mat-radio-button value="localhost">Localhost  {{ localhostUrl }}</mat-radio-button>
+                  <mat-radio-button value="dev">Development  {{ devUrl }}</mat-radio-button>
+                  <mat-radio-button value="uat">UAT  {{ uatUrl }}</mat-radio-button>
+                  <mat-radio-button value="prod">Production  {{ prodUrl }}</mat-radio-button>
+                </mat-radio-group>
+         
+            </mat-card-content>
+        </mat-card>
+
+    </div>
+
+
+
+
+    <button mat-raised-button color="accent" [disabled]="!loginForm.valid" class="w-100 mt-3" type="submit">Sign in</button>
+    <!-- class="btn btn-lg btn-primary btn-block" -->
+    <p class="mt-5 mb-3 text-muted">&copy; Triciclo 2019</p>
+  </form>
