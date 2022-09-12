@@ -5,6 +5,7 @@ import { GenericHttpServiceWithCache } from "../helpers/generic-http-service/gen
 import { Language } from "../model/language";
 import { AuthService } from "./auth.service";
 import { StorageService } from "./storage.service";
+import { GlobalParameters } from '../helpers/global-parameters/global-parameters';
 
 @Injectable({
     providedIn: 'root'
@@ -16,7 +17,7 @@ export class LanguageService extends GenericHttpServiceWithCache<
                                                                     Language,
                                                                     number> {
   
-  //baseURL: string;
+  
   
   currentCulture: string;
   
@@ -25,7 +26,7 @@ export class LanguageService extends GenericHttpServiceWithCache<
   constructor(http: HttpClient,
               private storageService: StorageService,
               private auth: AuthService) {
-    super(http, environment.baseUrl+'languages', 3600);
+    super(http, GlobalParameters.apiUrl + 'languages', 3600);
       this.currentCulture = 'pt-BR';
    }
   

@@ -1,4 +1,8 @@
 export interface Login {
-  userIdentification?: string;
-  password?: string;
+    domainName: string;
+    email: string | null;
+    mobile: string | null;
+    countryCallingCode: string | null;
+    password: string;
+    rememberMe: boolean;
 }

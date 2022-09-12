@@ -4,65 +4,107 @@
 
       <ul class="nav flex-column">
 
+        <li class="nav-item" style="background-color:lightgreen;" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+                        <a [routerLink]='["/"]'>
+                            <fa-icon class="menu-object" [icon]="myfaUserGear" size="2x" style="color: #20c997;"></fa-icon>
+                            <div class="menu-object" >
+                                {{"HOME" | translate}}
+                            </div>
+                        </a>
+        </li>
+
+
+
+
+
         <li class="nav-item" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
-          <a [routerLink]='["/"]'>
-            <i class='fa fa-home'></i> Home
-          </a>
-        </li>
-
-        <li myExpandMenu>
-          <a>
-            <i class="fa fa-university"  style="color: #20c997;"></i>{{"PROPERTIES" | translate}}
-          </a>
-        </li>
-        <ul class=" nav submenu " >
-
-          <li class="nav-item" [routerLinkActive]='["link-active"]'>
-            <a [routerLink]='["/companies"]'>
-              <i class="fa fa-university" style="color: #20c997;"></i> {{"CONTRACT" | translate}}
-            </a>
+                        <a [routerLink]='["/"]' >
+                            <fa-icon class="menu-object" [icon]="myfaChartLine" size="2x" style="color: #20c997;"></fa-icon>
+                            <div class="menu-object">
+                                Dashboard
+                            </div>
+                        </a>
           </li>
 
-          <li class="nav-item" [routerLinkActive]='["link-active"]'>
-            <a [routerLink]='["/companies/companyusers"]'>
-              <i class="fa fa-user-circle-o" style="color: #20c997;"></i> {{"PEOPLE" | translate}}
-            </a>
-          </li>
-        </ul>
 
-        <li myExpandMenu>
+
+
+        <li class="nav-item" myExpandMenu >
             <a>
-              <i class="fa fa-users" style="color: #20c997;"></i> {{"PEOPLE" | translate}}
+                <fa-icon class="menu-object" [icon]="myFaBuilding" size="2x" style="color: #20c997;"></fa-icon>
+                <div class="menu-object">
+                    {{"PROPERTIES" | translate}}
+                </div>    
             </a>
+        </li>
+
+            <ul class="nav submenu" >
+                <div class="">
+                    <li class="nav-item" [routerLinkActive]='["link-active"]'>
+                        <a [routerLink]='["/properties/attributes"]'>
+                            {{"PROPERTY ATTRIBUTES" | translate}}
+                            <fa-icon [icon]="myFaKitchenSet" style="color: #20c997;"></fa-icon>
+                        </a>
+                    </li>
+
+                    <li class="nav-item" [routerLinkActive]='["link-active"]'>
+                        <a [routerLink]='["/properties/categories"]'>
+                            {{"PROPERTY CATEGORIES" | translate}}
+                            <fa-icon [icon]="myFaWarehouse" style="color: #20c997;"></fa-icon>
+                        </a>
+                    </li>
+                </div>
+            </ul>
+
+
+        <li class="nav-item"  [routerLinkActive]='["link-active"]'>
+                        <a [routerLink]='["/companies"]'>
+                            <fa-icon class="menu-object" [icon]="myFaFileContract" size="2x" style="color: #20c997;"></fa-icon>
+                            <div class="menu-object">
+                                {{"CONTRACTS" | translate}}
+                            </div>
+                        </a>
+        </li>
+
+
+         
+        <li class="nav-item" myExpandMenu>
+                        <a >
+                            <fa-icon class="menu-object" [icon]="myfaUserGear" size="2x" style="color: #20c997;"></fa-icon>
+                            <div class="menu-object">
+                                {{"PEOPLE" | translate}}
+                            </div>
+                        </a>
           </li>
             <ul class=" nav submenu " >
-              <li class="nav-item" [routerLinkActive]='["link-active"]'>
-                <a [routerLink]='["/applicationUsers"]'>
-                  <i class="fa fa-users" style="color: #06a3a8;"></i>{{"LESSOR" | translate}}
-                </a>
-              </li>
-              <li class="nav-item" [routerLinkActive]='["link-active"]'>
-                  <a [routerLink]='["/applicationUsers/userProducts"]'>
-                    <i class="fa fa-stack-overflow" style="color: #06a3a8;"></i> {{"LESSEE" | translate}}
-                  </a>
-                </li>
                 <li class="nav-item" [routerLinkActive]='["link-active"]'>
-                    <a [routerLink]='["/applicationUsers/userPointsPerDay"]'>
-                      <i class="fa fa-money" style="color: #06a3a8;"></i> User  Points
+                    <a [routerLink]='["/applicationUsers"]'>
+                        {{"LESSOR" | translate}}
+                        <fa-icon [icon]="myFaPersonShelter"  style="color: #20c997;"></fa-icon>
                     </a>
                 </li>
                 <li class="nav-item" [routerLinkActive]='["link-active"]'>
-                  <a [routerLink]='["/applicationUsers/userVouchers"]'>
-                    <i class="fa fa-newspaper-o" style="color: #06a3a8;"></i> User  Vouchers
-                  </a>
+                        <a [routerLink]='["/applicationUsers/userProducts"]'>
+                        {{"LESSEE" | translate}}
+                        <fa-icon [icon]="myFaPeopleRoof" style="color: #20c997;"></fa-icon>
+                        </a>
+                </li>
+                <li class="nav-item" [routerLinkActive]='["link-active"]'>
+                        <a [routerLink]='["/applicationUsers/userProducts"]'>
+                            {{"GUARANTOR" | translate}}
+                            <fa-icon [icon]="myFaUserShield" style="color: #20c997;"></fa-icon>
+                        </a>
                 </li>
             </ul>
   
   
 
-        <li myExpandMenu>
+        <li class="nav-item" myExpandMenu>
           <a>
-            <i class="fa fa-bar-chart " style="color: #20c997;"></i> Machines
+            <i class="menu-object" class="fa fa-bar-chart " style="color: #20c997;"></i> 
+            <div class="menu-object">
+                Pendências
+            </div>
           </a>
         </li>
 
@@ -95,9 +137,12 @@
         </ul>
 
 
-        <li myExpandMenu>
+        <li class="nav-item" myExpandMenu>
           <a>
-            <i class="fa fa-cogs" style="color: #20c997;"></i> Maintenance
+            <i class="fa fa-cogs" style="color: #20c997;"></i>
+            <div class="menu-object">
+                Bancos
+            </div>
           </a>
         </li>
         <ul class=" nav submenu " >
@@ -115,6 +160,7 @@
         </ul>
       </ul>
     <!-- </div> -->
-  </nav>
+
+</nav>
 
 </div>

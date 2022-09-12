@@ -2,4 +2,184 @@
   <h1 class="text-center">KALLE SOFTWARE For Innovation</h1>
   <h2 class="text-center"> Kalle Imob</h2>
   <app-login *ngIf="!LoggedIn()"></app-login>
+  <div *ngIf="LoggedIn()" class="dashboard">
+    <!-- d-flex flex-lg-row flex-sm-column m-2 m-lg-3 -->
+
+    <mat-card *ngIf="dashboardContracts" class="dashboardCard">
+        <mat-card-header class="fw-bold bg-primary text-dark bg-opacity-25">{{"CONTRACTS" | translate}}</mat-card-header>
+        <mat-card-content>
+            <div class="container text-center">
+                <div class="row">
+                  <div class="col-9 col-text">
+                    {{"runningContracts" | translate}}
+                  </div>
+                  <div class="col-3 col-number">
+                    {{dashboardContracts.runningContracts}}
+                  </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-9 col-text" [title]="'next30Days' | translate">
+                      {{"endingContractsNext30days" | translate}}
+                    </div>
+                    <div class="col-3 col-number">
+                      {{dashboardContracts.endingContractsNext30days}}
+                    </div>
+                  </div>
+  
+                  <div class="row">
+                    <div class="col-9 col-text" [title]="'last30Days' | translate">
+                      {{"newSignedContractsLast30days" | translate}}
+                    </div>
+                    <div class="col-3 col-number">
+                      {{dashboardContracts.newSignedContractsLast30days}}
+                    </div>
+                  </div>
+
+
+                  <div class="row">
+                    <div class="col-9 col-text" [title]="'last30Days' | translate">
+                      {{"preContracts" | translate}}
+                    </div>
+                    <div class="col-3 col-number">
+                      {{dashboardContracts.preContracts}}
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-9 col-text" [title]="'contractsWithPendingEvents' | translate">
+                      {{"last30Days" | translate}}
+                    </div>
+                    <div class="col-3 col-number">
+                      {{dashboardContracts.contractsWithPendingEvents}}
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-9 col-text" [title]="'last30Days' | translate">
+                      {{"lateContracts" | translate}}
+                    </div>
+                    <div class="col-3 col-number">
+                      
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="offset-1 col-8 col-text" [title]="'last30Days' | translate">
+                      {{"last7Days" | translate}}
+                    </div>
+                    <div class="col-3 col-number">
+                      {{dashboardContracts.lateContracts7days}}
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="offset-1 col-8 col-text" [title]="'last30Days' | translate">
+                      {{"last30Days" | translate}}
+                    </div>
+                    <div class="col-3 col-number">
+                      {{dashboardContracts.lateContracts30days}}
+                    </div>
+                  </div>
+
+
+              </div>
+        </mat-card-content>
+    </mat-card>
+
+
+    <mat-card *ngIf="dashboardProperties" class="dashboardCard">
+      <mat-card-header class="fw-bold bg-primary text-dark bg-opacity-25">{{"PROPERTIES" | translate}}</mat-card-header>
+      <mat-card-content>
+          <div class="container">
+              <div class="row">
+                <div class="col-9 col-text">
+                  {{"AvailableProperties" | translate}}
+                </div>
+                <div class="col-3 col-number">
+                  {{dashboardProperties.AvailableProperties}}
+                </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-9 col-text" [title]="'last30Days' | translate">
+                    {{"NewPropertiesLast30days" | translate}}
+                  </div>
+                  <div class="col-3 col-number">
+                    {{dashboardProperties.NewPropertiesLast30days}}
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-9 col-text" [title]="'last30Days' | translate">
+                    {{"LostPropertiesLast30days" | translate}}
+                  </div>
+                  <div class="col-3 col-number">
+                    {{dashboardProperties.LostPropertiesLast30days}}
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="col-9 col-text" [title]="'last30Days' | translate">
+                    {{"ScheduledVisits" | translate}}
+                  </div>
+                  <div class="col-3 col-number">
+                    {{dashboardProperties.ScheduledVisits}}
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="col-9 col-text" [title]="'last30Days' | translate">
+                    {{"VisitsLast30days" | translate}}
+                  </div>
+                  <div class="col-3 col-number">
+                    {{dashboardProperties.VisitsLast30days}}
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="col-9 col-text" [title]="'last30Days' | translate">
+                    {{"PROPERTIES" | translate}}
+                  </div>
+                  <div class="col-3 col-number">
+                    
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="offset-1 col-8 col-text" >
+                    {{"1BedRoom" | translate}}
+                  </div>
+                  <div class="col-3 col-number">
+                    {{dashboardProperties.Properties1BedRoom}}
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="offset-1 col-8 col-text" >
+                    {{"2BedRooms" | translate}}
+                  </div>
+                  <div class="col-3 col-number">
+                    {{dashboardProperties.Properties2BedRooms}}
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="offset-1 col-8 col-text" >
+                    {{"3andMoreBedRooms" | translate}}
+                  </div>
+                  <div class="col-3 col-number">
+                    {{dashboardProperties.PropertiesMoreBedRooms}}
+                  </div>
+                </div>
+
+            </div>
+      </mat-card-content>
+  </mat-card>
+
+
+  </div>
 </div>

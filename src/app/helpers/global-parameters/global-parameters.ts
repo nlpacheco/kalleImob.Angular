@@ -1,15 +1,38 @@
+export const serverDEVBaseURL = 'https://localhost:7175';
+export const serverUATBaseUrl = 'https://localhost:7175';
+export const serverPRDBaseUrl = 'https://localhost:7175';
+export const serverLocalHostBaseUrl = 'lhttps://localhost:7175';
+
+const serverURL = serverDEVBaseURL;
+
+export const suffixes = {
+    apiSuffix:      '/api',
+    authSuffix:     '/login',
+    errorSuffix:    '/errors',
+    userSuffix:     '/users',
+    mediaSuffix:    '/media',
+    imageSuffix:    '/media/images'
+}
+
 
 export const GlobalParameters = {
 
-  version: '1.19 2020.01.07',
+    
+  version:          '1.0 2022.09.07',
+  appId:            'KalleImob',
+  
+  
 
+  baseUrl:          serverURL ,
+  apiUrl:           serverURL + suffixes.apiSuffix,
+  authUrl:          serverURL + suffixes.apiSuffix + suffixes.authSuffix,
+  errorApiURL:      serverURL + suffixes.apiSuffix + suffixes.errorSuffix,
+  userUrl:          serverURL + suffixes.apiSuffix + suffixes.userSuffix,
+  mediaUrl:         serverURL + suffixes.apiSuffix + suffixes.mediaSuffix,
+  imageUrl:         serverURL + suffixes.imageSuffix ,
+  spinnerUrl:       serverURL + suffixes.imageSuffix + '/Spinner.gif',
 
-  baseUrl: 'https://ivacina.com.br:9106/',
-  apiUrl: 'https://ivacina.com.br:9106/api/',
-  mediaUrl: 'https://ivacina.com.br:9106/media/',
-  imageUrl: 'https://ivacina.com.br:9106/media/images/',
-  spinnerUrl: 'https://ivacina.com.br:9106/media/Spinner-1.4s-200px.svg',
-
+  missingFile:      'false_640.png',
 
   locale: 'pt-br',
   cacheMaxAgeMinutes: 60,
@@ -22,26 +45,12 @@ export const GlobalParameters = {
   cpfParameterName: 'CPF',
   usernameParameterName: 'username',
   emailParameterName: 'email',
-  machineIdParameterName: 'machineId',
-  EANParameterName: 'EAN',
-  EANPartialParameterName: 'EANeanPartial',
   referenceDateParameterName: 'referenceDate',
-  rewardIdParameterName: 'rewardId',
-  userPartnerCodeParameterName: 'userPartnerCode',
-  userPartnerCodeNameParameterName: 'userPartnerCodeName',
   transferStatusParameterName: 'transferStatus',
-  requestDateParameterName: 'requestDate',
   updateDateParameterName: 'updateDate',
-  companyIdParameterName: 'companyId',
-  cnpjParameterName: 'CNPJ',
   namePartialParameterName: 'namePartial',
-  companyNameParameterName: 'companyName',
   descriptionPartialParameterName: 'descriptionPartial',
   validAtParameterName: 'validAt',
-  campaignIdParameterName: 'campaignId',
-  birthdateParameterName: 'birthdate',
-  surveyIdParameterName: 'surveyId',
-  surveyQuestionIdParameterName: 'surveyQuestionId',
   voucherIdParameterName: 'voucherId',
   mediaNameParameterName: 'mediaName',
   mediaTypeParameterName: 'mediaType',
@@ -57,7 +66,6 @@ export const GlobalParameters = {
   isCanceledParameterName: 'isCanceled',
 
     // Error Support
-    errorApiURL: 'http://localhost:64750/errors/',
-    AppId: 'retornaMachineADMIN'
+    //errorApiURL: 'http://localhost:64750/errors/',
 
 }

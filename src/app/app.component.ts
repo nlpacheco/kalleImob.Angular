@@ -39,7 +39,7 @@ export class AppComponent extends BaseUserPreference implements OnInit, OnDestro
     this.mobileQuery = media.matchMedia('(max-width: 768px)');
     this.mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this.mobileQueryListener);
-
+    this.notificationService.success('Teste de mensagem');
 
 
     //  environment.supportedLangs.forEach((language) => {
@@ -108,7 +108,7 @@ async onLogout() {
 
 ngOnInit(): void {
   // console.log('AppComponent - onInit');
-  this.authService.getDecodeToken();
+  //this.authService.getDecodeToken();
 }
 
 ngOnDestroy(): void {

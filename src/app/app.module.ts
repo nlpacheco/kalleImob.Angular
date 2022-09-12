@@ -16,6 +16,7 @@ import { MaterialModule } from './material.module';
 import { FormsModule } from '@angular/forms';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { environment } from 'src/environments/environment';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -36,7 +37,7 @@ export function createTranslateLoader(http: HttpClient) {
     MaterialModule,
     HttpClientModule,
     FormsModule,
-    FontAwesomeModule,
+    FontAwesomeModule   ,
     BrowserAnimationsModule,
     TranslateModule.forRoot({
         defaultLanguage: environment.defaultLanguage,
@@ -47,6 +48,7 @@ export function createTranslateLoader(http: HttpClient) {
             deps: [HttpClient]
         }
     }),
+    NgbModule,
 
   ],
   providers: [],
